@@ -32,12 +32,12 @@ class Game {
     }
 
     calculatePoints() {
-        if (this.player1.position.y == 100) {
+        if (this.player1.position.y <= this.player1.height / 2) {
             this.player1.position.y = canvas.height
             this.points1++
-            console.log("points1")
+            
         }
-        if (this.player2.position.y == 100) {
+        if (this.player2.position.y <= this.player1.height / 2) {
             this.player2.position.y = canvas.height
             this.points2++
         }
@@ -74,9 +74,7 @@ function tick() {
     frameCount++
     
 
-    if (frameCount == 100) {
-        
-        
+    if (frameCount == 100) {        
          balls.push(new Ball(new Position(0, generateRandomPosition1()), new Velocity(200, 0) ))
          balls.push(new Ball(new Position(canvas.width - 50, generateRandomPosition1()), new Velocity(-200, 0) ))
         frameCount = 0;
