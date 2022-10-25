@@ -9,5 +9,6 @@ export class Velocity {
     constructor(dx, dy) {
         this.dx = dx;
         this.dy = dy;
+
     }
 }
