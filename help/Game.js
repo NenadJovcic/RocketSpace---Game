@@ -1,6 +1,6 @@
-import { Position, Velocity } from './spelComponent.js';
-import { Ball, generateRandomPosition1, generateRandomVelocity1, ballPlayerCollision } from './spelBall.js';
-import { Player } from './spelPlayer.js';
+import { Position, Velocity } from './Component.js';
+import { Ball, generateRandomPosition1, } from './Ball.js';
+import { Player } from './Player.js';
 import { Line } from './line.js';
 
 
@@ -10,7 +10,7 @@ class Game {
         this.context = context;
         this.intialPosPlayer1 = {x: canvas.width*0.25 ,y: canvas.height}
         this.intialPosPlayer2 = {x: canvas.width*0.75 ,y: canvas.height}
-        this.player1 = new Player(new Position(canvas.width*0.25 , canvas.height ));
+        this.player1 = new Player(new Position(canvas.width*0.25 , canvas.height));
         this.player2 = new Player(new Position(canvas.width*0.75 , canvas.height));
         this.lastTime = Date.now();
         this.deltaTime = 0;
@@ -54,8 +54,6 @@ class Game {
         this.context.textAlign = 'center';
         this.context.fillText(this.points2, (this.canvas.width / 2) + 100, 70);
     }
-
-    
 }
 
 const canvas = document.getElementById('canvas');
@@ -63,7 +61,7 @@ const context = canvas.getContext('2d');
 
 export const game = new Game(canvas, context);
 
-let balls = []
+export let balls = []
 let frameCount = 0;
 function tick() {
 
@@ -75,8 +73,8 @@ function tick() {
     
 
     if (frameCount == 100) {        
-         balls.push(new Ball(new Position(0, generateRandomPosition1()), new Velocity(200, 0) ))
-         balls.push(new Ball(new Position(canvas.width - 50, generateRandomPosition1()), new Velocity(-200, 0) ))
+         balls.push(new Ball(new Position(0, generateRandomPosition1()), new Velocity(200, 0), "white"))
+         balls.push(new Ball(new Position(canvas.width - 50, generateRandomPosition1()), new Velocity(-200, 0), "white" ))
         frameCount = 0;
     }
     
@@ -90,6 +88,7 @@ function tick() {
     }
     game.drawPoints();
 
+    
     game.player1.draw(game);
     game.player2.draw(game);
 

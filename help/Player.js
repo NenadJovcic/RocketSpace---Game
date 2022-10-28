@@ -1,11 +1,16 @@
 export class Player {
-    constructor(position) {
+    constructor(position, ) {
         this.position = position;
         this.width = 50;
         this.height = 85;
-        this.color = "white";
+        this.color = "black";
         this.up = false;
         this.down = false;
+        const image = new Image()
+        image.src = "rocket-19662.png"
+        this.image = image
+
+        
     }
     draw(game) {
         game.context.fillStyle = this.color;
@@ -15,6 +20,7 @@ export class Player {
             this.width,
             this.height
         );
+        game.context.drawImage(this.image, this.position.x -70, this.position.y - 58, 140, 140)
     }
 
     tick(game) {
@@ -32,7 +38,7 @@ export class Player {
         }
         if (game.player1.position.y == 100) {
             game.points1++;
-            console.log("points")
+            
           } else if (game.player2.position.y == 0) {
             game.points2++;
           }

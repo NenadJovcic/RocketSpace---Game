@@ -1,12 +1,13 @@
-import { Position, Velocity } from "./spelComponent.js";
+
 
 export class Ball {
-  constructor(position, velocity) {
+  constructor(position, velocity, color) {
     this.position = position;
     this.velocity = velocity;
     this.radius = 15;
-    this.color = "white";
+    this.color = color;
   }
+
   draw(game) {
     game.context.beginPath();
     game.context.fillStyle = this.color;
@@ -23,18 +24,12 @@ export class Ball {
   move(game) {
     this.position.x += this.velocity.dx * game.deltaTime;
 
-    // if (this.position.y > game.canvas.height - this.radius || this.position.y < this.radius) {
-    //     this.velocity.dy *= -1;
-    // }
-
     if (ballPlayerCollision(this, game.player1)) {
       game.player1.position.y = canvas.height;
     }
     if (ballPlayerCollision(this, game.player2)) {
       game.player2.position.y = canvas.height;
     }
-
-
   }
 }
 
