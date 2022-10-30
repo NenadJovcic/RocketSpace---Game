@@ -6,8 +6,8 @@ import {
     handlePlayer2KeyDown,
     handlePlayer2KeyUp,
     
-} from './Event.js';
-import { game } from './Game.js';
+} from './event.js';
+import { game } from './Game-Loop.js';
 
 
 window.addEventListener('keypress', handlePlayer1KeyDown);

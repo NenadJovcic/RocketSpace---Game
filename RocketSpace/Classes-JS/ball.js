@@ -1,5 +1,4 @@
 
-
 export class Ball {
   constructor(position, velocity, color) {
     this.position = position;
@@ -33,26 +32,26 @@ export class Ball {
   }
 }
 
-export function ballPlayerCollision(ball, pad) {
-  let cdx = Math.abs(ball.position.x - pad.position.x);
-  let cdy = Math.abs(ball.position.y - pad.position.y);
+function ballPlayerCollision(ball, player) {
+  let cdx = Math.abs(ball.position.x - player.position.x);
+  let cdy = Math.abs(ball.position.y - player.position.y);
 
-  if (cdx > pad.width / 2 + ball.radius) {
+  if (cdx > player.width / 2 + ball.radius) {
     return false;
   }
 
-  if (cdy > pad.height / 2 + ball.radius) {
+  if (cdy > player.height / 2 + ball.radius) {
     return false;
   }
 
-  if (cdx <= pad.width / 2) {
+  if (cdx <= player.width / 2) {
     return true;
   }
-  if (cdy <= pad.height / 2) {
+  if (cdy <= player.height / 2) {
     return true;
   }
 
-  let distSquared = (cdx - pad.width / 2) ** 2 + (cdy - pad.height / 2) ** 2;
+  let distSquared = (cdx - player.width / 2) ** 2 + (cdy - player.height / 2) ** 2;
   return distSquared <= ball.radius ** 2;
 }
 

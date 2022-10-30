@@ -7,7 +7,7 @@ export class Player {
         this.up = false;
         this.down = false;
         const image = new Image()
-        image.src = "rocket-19662.png"
+        image.src = "/RocketSpace/Style-Related/rocket-19662.png"
         this.image = image
 
         

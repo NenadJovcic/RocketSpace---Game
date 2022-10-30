@@ -1,7 +1,7 @@
-import { Position, Velocity } from './Component.js';
-import { Ball, generateRandomPosition1, } from './Ball.js';
-import { Player } from './Player.js';
-import { Line } from './line.js';
+import { Position, Velocity } from '../Classes-JS/Component.js';
+import { Ball, generateRandomPosition1, } from '../Classes-JS/ball.js';
+import { Player } from '../Classes-JS/player.js';
+import { Line } from '../Classes-JS/line.js';
 
 
 class Game {

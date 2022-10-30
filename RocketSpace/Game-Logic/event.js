@@ -1,6 +1,6 @@
-import { Ball } from "./Ball.js";
-import { game, balls } from "./Game.js";
-import { Position, Velocity } from "./Component.js";
+import { Ball } from "../Classes-JS/ball.js";
+import { game, balls } from "./Game-Loop.js";
+import { Position, Velocity } from "../Classes-JS/Component.js";
 
 let pressedPlayer1 = true;
 let pressedPlayer2 = true;
