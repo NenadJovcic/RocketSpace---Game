@@ -40,7 +40,7 @@ export class Game {
       this.player1.position.y = canvas.height;
       this.points1++;
     }
-    if (this.player2.position.y <= this.player1.height / 2) {
+    if (this.player2.position.y <= this.player2.height / 2) {
       this.player2.position.y = canvas.height;
       this.points2++;
     }
